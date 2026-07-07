@@ -1,145 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLB Guess the Team</title>
+
+    <title>Guess The Team</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
+<header>
+    <h1>⚾ GUESS THE TEAM</h1>
+    <h2>By Their Jersey Numbers</h2>
+</header>
 
-    <header>
-        <h1>⚾ GUESS THE TEAM</h1>
-        <p>By Their Jersey Numbers</p>
-    </header>
 
-    <section class="scoreboard">
+<section class="scoreboard">
 
-        <div class="score-box">
-            <h3>Progress</h3>
-            <span id="progress">0 / 9</span>
-        </div>
+    <div>
+        <h3>TEAM</h3>
+        <p id="teamName">???</p>
+    </div>
 
-        <div class="score-box">
-            <h3>Score</h3>
-            <span id="score">0</span>
-        </div>
+    <div>
+        <h3>SCORE</h3>
+        <p id="score">0</p>
+    </div>
 
-        <div class="score-box">
-            <h3>Accuracy</h3>
-            <span id="accuracy">100%</span>
-        </div>
+    <div>
+        <h3>PROGRESS</h3>
+        <p id="progress">0 / 10</p>
+    </div>
 
-        <div class="score-box">
-            <h3>Time</h3>
-            <span id="timer">00:00</span>
-        </div>
+    <div>
+        <h3>TIME</h3>
+        <p id="timer">60</p>
+    </div>
 
-    </section>
+</section>
 
-    <main class="field">
 
-        <div class="card cf">
-            <label>CF</label>
-            <div class="number" id="cf">25</div>
-        </div>
 
-        <div class="card lf">
-            <label>LF</label>
-            <div class="number" id="lf">9</div>
-        </div>
+<main>
 
-        <div class="card rf">
-            <label>RF</label>
-            <div class="number" id="rf">15</div>
-        </div>
+<div class="field">
 
-        <div class="card ss">
-            <label>SS</label>
-            <div class="number" id="ss">4</div>
-        </div>
 
-        <div class="card second">
-            <label>2B</label>
-            <div class="number" id="second">2</div>
-        </div>
+    <div class="position cf">
+        <span>CF</span>
+        <div id="CF" class="card">?</div>
+    </div>
 
-        <div class="card third">
-            <label>3B</label>
-            <div class="number" id="third">22</div>
-        </div>
 
-        <div class="card first">
-            <label>1B</label>
-            <div class="number" id="first">23</div>
-        </div>
+    <div class="position lf">
+        <span>LF</span>
+        <div id="LF" class="card">?</div>
+    </div>
 
-        <div class="card ace">
-            <label>ACE</label>
-            <div class="number" id="ace">41</div>
-        </div>
 
-        <div class="card catcher">
-            <label>C</label>
-            <div class="number" id="catcher">27</div>
-        </div>
+    <div class="position rf">
+        <span>RF</span>
+        <div id="RF" class="card">?</div>
+    </div>
 
-        <div class="card dh">
-            <label>DH</label>
-            <div class="number" id="dh">56</div>
-        </div>
 
-        <div class="card team">
-            <label>TEAM</label>
-            <div class="number" id="team">?</div>
-        </div>
 
-    </main>
+    <div class="position ss">
+        <span>SS</span>
+        <div id="SS" class="card">?</div>
+    </div>
 
-    <section class="guess-area">
 
-        <input
-            type="text"
-            id="guessInput"
-            placeholder="Type a player's name..."
-            autocomplete="off">
+    <div class="position second">
+        <span>2B</span>
+        <div id="2B" class="card">?</div>
+    </div>
 
-        <button id="submitGuess">
-            Guess
-        </button>
 
-    </section>
+    <div class="position third">
+        <span>3B</span>
+        <div id="3B" class="card">?</div>
+    </div>
 
-    <div id="message"></div>
 
-    <section class="controls">
+    <div class="position first">
+        <span>1B</span>
+        <div id="1B" class="card">?</div>
+    </div>
 
-        <button id="hintButton">Hint</button>
 
-        <button id="revealButton">
-            Reveal
-        </button>
 
-        <button id="nextButton">
-            Next Team
-        </button>
+    <div class="position pitcher">
+        <span>P</span>
+        <div id="P" class="card">?</div>
+    </div>
 
-    </section>
 
-    <section class="correct-section">
 
-        <h2>Correct Players</h2>
+    <div class="position catcher">
+        <span>C</span>
+        <div id="C" class="card">?</div>
+    </div>
 
-        <ul id="correctList"></ul>
 
-    </section>
+
+    <div class="position dh">
+        <span>DH</span>
+        <div id="DH" class="card">?</div>
+    </div>
+
 
 </div>
 
+
+<div class="controls">
+
+    <input 
+        id="guessInput"
+        type="text"
+        placeholder="Guess MLB team name"
+    >
+
+
+    <button id="guessBtn">
+        GUESS
+    </button>
+
+
+    <button id="hintBtn">
+        HINT
+    </button>
+
+
+    <button id="revealBtn">
+        REVEAL
+    </button>
+
+
+    <button id="nextBtn">
+        NEXT TEAM
+    </button>
+
+</div>
+
+
+
+<h2 id="message"></h2>
+
+
+<div id="answerBox">
+
+</div>
+
+
+</main>
+
+
+
+<script src="teams.js"></script>
 <script src="script.js"></script>
 
+
 </body>
+
 </html>

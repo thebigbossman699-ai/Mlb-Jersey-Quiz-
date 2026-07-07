@@ -1,0 +1,284 @@
+/* ===============================
+   MLB Guess the Team
+   style.css
+================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(180deg,#04142d,#071d47,#04142d);
+    color:white;
+    min-height:100vh;
+}
+
+.container{
+    width:min(1200px,95%);
+    margin:auto;
+    padding:20px;
+}
+
+/* HEADER */
+
+header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+header h1{
+    font-size:clamp(2.5rem,6vw,5rem);
+    font-weight:900;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+header p{
+    font-size:1.2rem;
+    color:#d8d8d8;
+    text-transform:uppercase;
+}
+
+/* SCOREBOARD */
+
+.scoreboard{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.score-box{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:12px;
+    text-align:center;
+    padding:15px;
+    backdrop-filter:blur(6px);
+}
+
+.score-box h3{
+    font-size:.9rem;
+    color:#b5c9ff;
+}
+
+.score-box span{
+    display:block;
+    margin-top:8px;
+    font-size:1.6rem;
+    font-weight:bold;
+}
+
+/* FIELD */
+
+.field{
+    position:relative;
+    width:100%;
+    max-width:900px;
+    height:900px;
+    margin:auto;
+}
+
+/* Diamond */
+
+.field::before{
+    content:"";
+    position:absolute;
+    width:380px;
+    height:380px;
+    border:8px solid white;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+    border-radius:8px;
+}
+
+/* Cards */
+
+.card{
+    position:absolute;
+    text-align:center;
+}
+
+.card label{
+    display:block;
+    margin-bottom:8px;
+    font-size:1.4rem;
+    font-weight:bold;
+}
+
+.number{
+    width:120px;
+    height:120px;
+    background:linear-gradient(#444,#111);
+    border:3px solid white;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:3rem;
+    font-weight:bold;
+    box-shadow:0 8px 20px rgba(0,0,0,.5);
+    transition:.25s;
+}
+
+.number:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px #00c3ff;
+}
+
+/* Positions */
+
+.cf{top:0;left:50%;transform:translateX(-50%);}
+.lf{top:120px;left:0;}
+.rf{top:120px;right:0;}
+.ss{top:320px;left:180px;}
+.second{top:320px;right:180px;}
+.third{top:560px;left:40px;}
+.first{top:560px;right:40px;}
+.ace{top:500px;left:50%;transform:translateX(-50%);}
+.catcher{bottom:40px;left:50%;transform:translateX(-50%);}
+.dh{bottom:40px;left:0;}
+.team{bottom:40px;right:0;}
+
+/* Guess */
+
+.guess-area{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:35px 0;
+}
+
+.guess-area input{
+    width:350px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+.guess-area button{
+    padding:14px 30px;
+    border:none;
+    border-radius:10px;
+    background:#0ea5e9;
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.guess-area button:hover{
+    background:#0284c7;
+}
+
+/* Message */
+
+#message{
+    text-align:center;
+    font-size:1.4rem;
+    min-height:40px;
+    font-weight:bold;
+}
+
+/* Controls */
+
+.controls{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:25px 0;
+}
+
+.controls button{
+    padding:12px 24px;
+    border:none;
+    border-radius:10px;
+    background:#1e40af;
+    color:white;
+    cursor:pointer;
+    transition:.2s;
+    font-size:1rem;
+}
+
+.controls button:hover{
+    background:#2563eb;
+}
+
+/* Correct List */
+
+.correct-section{
+    margin-top:40px;
+}
+
+.correct-section h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+#correctList{
+    list-style:none;
+    max-width:500px;
+    margin:auto;
+}
+
+#correctList li{
+    padding:10px;
+    margin-bottom:8px;
+    background:rgba(255,255,255,.08);
+    border-radius:8px;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.field{
+    height:700px;
+}
+
+.number{
+    width:90px;
+    height:90px;
+    font-size:2rem;
+}
+
+.card label{
+    font-size:1rem;
+}
+
+.field::before{
+    width:270px;
+    height:270px;
+}
+
+.ss{left:110px;}
+.second{right:110px;}
+
+}
+
+@media(max-width:650px){
+
+.scoreboard{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.guess-area{
+    flex-direction:column;
+    align-items:center;
+}
+
+.guess-area input{
+    width:90%;
+}
+
+.controls{
+    flex-wrap:wrap;
+}
+
+}
